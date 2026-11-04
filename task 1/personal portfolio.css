@@ -1,1 +1,151 @@
+<body>
+
+<header>
+    <nav>
+        <h2>My Portfolio</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Home -->
+<div class="hero" id="home">
+    <h1>Hello, I'm Vishnupriya!</h1>
+    <p>Student | Web Developer | Creative Learner</p>
+    <button onclick="location.href='#about'">Explore My Portfolio</button>
+</div>
+
+<!-- About -->
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <h3>My Profile</h3>
+        <p>
+            Hello! I am Vishnupriya. I am a student interested in
+            technology, programming and web development.
+            I enjoy learning new skills and creating innovative projects.
+        </p>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+    <h2>Educational Qualifications</h2>
+    <div class="card">
+        <h3>B.Tech - Computer Science</h3>
+        <p>Currently Pursuing</p>
+    </div>
+
+    <div class="card">
+        <h3>Intermediate</h3>
+        <p>Completed - 2026</p>
+    </div>
+
+    <div class="card">
+        <h3>SSC</h3>
+        <p>Completed - 2024</p>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Python</span>
+        <span class="skill">C Programming</span>
+        <span class="skill">Java</span>
+        <span class="skill">MS PowerPoint</span>
+    </div>
+</section>
+
+<!-- Hobbies -->
+<section id="hobbies">
+    <h2>My Hobbies</h2>
+    <div class="card">
+        <p>🎨 Painting</p>
+        <p>🎵 Listening to Music</p>
+        <p>📚 Learning New Things</p>
+        <p>🛍️ Shopping</p>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="card">
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive website created using HTML and CSS.</p>
+    </div>
+
+    <div class="card">
+        <h3>Student Scholarship System</h3>
+        <p>A Python project for evaluating scholarship eligibility.</p>
+    </div>
+</section>
+
+<!-- Achievements -->
+<section id="achievements">
+    <h2>Achievements</h2>
+    <div class="card">
+        <p>✓ Participated in academic activities.</p>
+        <p>✓ Developed programming knowledge.</p>
+        <p>✓ Improved presentation skills.</p>
+    </div>
+</section>
+
+<!-- Resume -->
+<section id="resume">
+    <h2>My Resume</h2>
+    <div class="card">
+        <p>Click below to download my resume.</p>
+        <br>
+        <a href="resume.pdf" download>
+            <button>Download Resume</button>
+        </a>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="card">
+        <p>Email: yourname@gmail.com</p>
+        <p>Phone: +91 XXXXXXXXXX</p>
+        <p>Location: Vijayawada, Andhra Pradesh</p>
+    </div>
+
+    <form class="contact-form" onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Enter Your Name" required>
+        <input type="email" placeholder="Enter Your Email" required>
+        <textarea placeholder="Enter Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Meghana | Personal Portfolio Website</p>
+</footer>
+
+<script>
+    function sendMessage(event) {
+        event.preventDefault();
+        alert("Thank you! Your message has been submitted.");
+        event.target.reset();
+    }
+</script>
+
+</body>
+</html>
+
+
+
 

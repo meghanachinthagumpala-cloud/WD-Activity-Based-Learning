@@ -1,1 +1,278 @@
 
+body>
+
+<!-- Header -->
+<header>
+    <h1>🌿 Pure Wellness Center</h1>
+    <p>Balance Your Mind, Body and Soul</p>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#yoga">Yoga</a>
+    <a href="#meditation">Meditation</a>
+    <a href="#instructors">Instructors</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#membership">Membership</a>
+    <a href="#articles">Articles</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Home -->
+<section class="hero" id="home">
+    <h2>Welcome to Pure Wellness</h2>
+    <p>Discover Peace, Health and Happiness</p>
+    <a href="#yoga" class="btn">Explore Wellness</a>
+</section>
+
+<!-- Yoga Poses -->
+<section id="yoga">
+    <h2>Popular Yoga Poses</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600"
+            alt="Mountain pose yoga">
+            <div class="card-content">
+                <h3>Mountain Pose</h3>
+                <p>A simple standing pose that encourages balance and posture.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=600"
+            alt="Yoga practice">
+            <div class="card-content">
+                <h3>Tree Pose</h3>
+                <p>A standing balance pose that develops focus and stability.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=600"
+            alt="Yoga stretching">
+            <div class="card-content">
+                <h3>Child's Pose</h3>
+                <p>A gentle resting posture used during yoga practice.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Meditation -->
+<section id="meditation">
+    <h2>Meditation Techniques</h2>
+
+    <div class="meditation">
+        <h3>Mindfulness Meditation</h3>
+        <p>Focus on the present moment and observe your thoughts calmly.</p>
+        <br>
+
+        <h3>Breathing Meditation</h3>
+        <p>Pay attention to your natural breathing to improve concentration.</p>
+        <br>
+
+        <h3>Guided Meditation</h3>
+        <p>Follow a guided session to develop relaxation and awareness.</p>
+    </div>
+</section>
+
+<!-- Instructors -->
+<section id="instructors">
+    <h2>Our Instructors</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600"
+            alt="Yoga instructor">
+            <div class="card-content">
+                <h3>Ananya Sharma</h3>
+                <p>Yoga Instructor</p>
+                <p>Experience: 8 Years</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
+            alt="Meditation instructor">
+            <div class="card-content">
+                <h3>Rahul Kumar</h3>
+                <p>Meditation Instructor</p>
+                <p>Experience: 6 Years</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600"
+            alt="Wellness instructor">
+            <div class="card-content">
+                <h3>Priya Reddy</h3>
+                <p>Wellness Coach</p>
+                <p>Experience: 5 Years</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Schedule -->
+<section id="schedule">
+    <h2>Class Schedule</h2>
+
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Class</th>
+            <th>Time</th>
+            <th>Instructor</th>
+        </tr>
+
+        <tr>
+            <td>Monday</td>
+            <td>Yoga</td>
+            <td>6:00 AM</td>
+            <td>Ananya</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>Meditation</td>
+            <td>7:00 AM</td>
+            <td>Rahul</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td>Yoga</td>
+            <td>6:00 AM</td>
+            <td>Ananya</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td>Wellness</td>
+            <td>8:00 AM</td>
+            <td>Priya</td>
+        </tr>
+
+        <tr>
+            <td>Friday</td>
+            <td>Meditation</td>
+            <td>7:00 AM</td>
+            <td>Rahul</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Membership -->
+<section id="membership">
+    <h2>Membership Plans</h2>
+
+    <div class="grid">
+
+        <div class="plan">
+            <h3>Basic Plan</h3>
+            <p class="price">₹499 / Month</p>
+            <ul>
+                <li>Yoga Classes</li>
+                <li>Weekly Sessions</li>
+                <li>Basic Guidance</li>
+            </ul>
+            <button onclick="joinPlan('Basic Plan')">Join Now</button>
+        </div>
+
+        <div class="plan">
+            <h3>Standard Plan</h3>
+            <p class="price">₹999 / Month</p>
+            <ul>
+                <li>Yoga Classes</li>
+                <li>Meditation Sessions</li>
+                <li>Personal Guidance</li>
+            </ul>
+            <button onclick="joinPlan('Standard Plan')">Join Now</button>
+        </div>
+
+        <div class="plan">
+            <h3>Premium Plan</h3>
+            <p class="price">₹1499 / Month</p>
+            <ul>
+                <li>All Yoga Classes</li>
+                <li>All Meditation Sessions</li>
+                <li>Personal Wellness Support</li>
+            </ul>
+            <button onclick="joinPlan('Premium Plan')">Join Now</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- Wellness Articles -->
+<section id="articles">
+    <h2>Wellness Articles</h2>
+
+    <div class="grid">
+
+        <div class="article">
+            <h3>Benefits of Yoga</h3>
+            <p>Yoga supports flexibility, balance and general well-being.</p>
+        </div>
+
+        <div class="article">
+            <h3>Importance of Meditation</h3>
+            <p>Meditation can help develop attention and mindfulness.</p>
+        </div>
+
+        <div class="article">
+            <h3>Healthy Lifestyle</h3>
+            <p>Balanced meals, adequate sleep and regular activity support wellness.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact">
+        <p>Email: wellness@gmail.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Location: Vijayawada, Andhra Pradesh</p>
+
+        <br>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Pure Wellness Center | All Rights Reserved</p>
+    <p>Stay Healthy, Stay Happy 🌿</p>
+</footer>
+
+<script>
+
+function joinPlan(plan) {
+    alert("You selected the " + plan + "!");
+}
+
+function sendMessage(event) {
+    event.preventDefault();
+    alert("Thank you! Your message has been submitted.");
+    event.target.reset();
+}
+
+</script>
+
+</body>
+</html>

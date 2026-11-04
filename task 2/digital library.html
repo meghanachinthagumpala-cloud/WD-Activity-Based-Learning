@@ -1,1 +1,303 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Digital Library</title>
+
+<style>
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #183a37;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    background: #285943;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* Home Section */
+.hero {
+    background: linear-gradient(120deg, #6a994e, #183a37);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #ffd166;
+    color: #183a37;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 50px 8%;
+    text-align: center;
+}
+
+section h2 {
+    color: #183a37;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* Search and Filter */
+.search input, .search select {
+    padding: 12px;
+    margin: 8px;
+    width: 250px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+.search button {
+    padding: 12px 25px;
+    background: #285943;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ccc;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background: #d8ead2;
+    transform: translateY(-8px);
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.book-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #ccc;
+    transition: 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+}
+
+.book-card img {
+    width: 140px;
+    height: 190px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.book-card h3 {
+    color: #285943;
+    margin-bottom: 10px;
+}
+
+.book-card p {
+    margin: 8px;
+    font-size: 14px;
+}
+
+/* Availability */
+.available {
+    display: inline-block;
+    background: #c8e6c9;
+    color: green;
+    padding: 7px 12px;
+    border-radius: 20px;
+}
+
+.unavailable {
+    display: inline-block;
+    background: #ffcdd2;
+    color: red;
+    padding: 7px 12px;
+    border-radius: 20px;
+}
+
+/* Catalog Table */
+.catalog {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background: #285943;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #e8f0e9;
+}
+
+tr:hover {
+    background: #d8ead2;
+}
+
+/* Library Rules */
+.rules-box {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #ccc;
+    text-align: left;
+}
+
+.rules-box li {
+    margin: 15px;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background: #183a37;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .book-grid, .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    section {
+        padding: 35px 5%;
+    }
+
+    .search input, .search select {
+        width: 100%;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+
+</style>
+</head>

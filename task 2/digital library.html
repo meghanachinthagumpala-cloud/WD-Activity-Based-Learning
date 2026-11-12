@@ -2,302 +2,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Digital Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Library</title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-/* General Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f3;
+            color: #333;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f7f9;
-    color: #333;
-}
+        /* Header */
+        header {
+            background: #173d32;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
 
-/* Header */
-header {
-    background: #183a37;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
+        header h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
 
-header h1 {
-    margin-bottom: 10px;
-}
+        header p {
+            font-size: 16px;
+        }
 
-/* Navigation */
-nav {
-    background: #285943;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+        /* Navigation */
+        nav {
+            background: #245b49;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-nav a:hover {
-    color: #ffd166;
-}
+        nav a:hover {
+            color: #ffd166;
+        }
 
-/* Home Section */
-.hero {
-    background: linear-gradient(120deg, #6a994e, #183a37);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    animation: fadeIn 1.5s;
-}
+        /* Common Sections */
+        section {
+            padding: 40px 8%;
+        }
 
-.hero h2 {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
+        h2 {
+            text-align: center;
+            color: #173d32;
+            margin-bottom: 25px;
+        }
 
-.hero p {
-    font-size: 20px;
-}
+        /* Search and Filter */
+        .search-box {
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background: #ffd166;
-    color: #183a37;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: 0.3s;
-}
+        .search-box input,
+        .search-box select {
+            padding: 12px;
+            margin: 8px;
+            width: 220px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
 
-.btn:hover {
-    background: white;
-    transform: scale(1.1);
-}
+        .search-box button {
+            padding: 12px 20px;
+            background: #245b49;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
 
-/* Sections */
-section {
-    padding: 50px 8%;
-    text-align: center;
-}
+        .search-box button:hover {
+            background: #173d32;
+        }
 
-section h2 {
-    color: #183a37;
-    margin-bottom: 30px;
-    font-size: 30px;
-}
+        /* Book Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
 
-/* Search and Filter */
-.search input, .search select {
-    padding: 12px;
-    margin: 8px;
-    width: 250px;
-    border: 1px solid #aaa;
-    border-radius: 6px;
-}
+        .category {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+            transition: 0.3s;
+        }
 
-.search button {
-    padding: 12px 25px;
-    background: #285943;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
+        .category:hover {
+            transform: translateY(-7px);
+            background: #e1f2e9;
+        }
 
-/* Category Grid */
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+        .category h3 {
+            color: #245b49;
+        }
 
-.category {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px #ccc;
-    font-size: 20px;
-    transition: 0.3s;
-}
+        /* Book Cards */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 25px;
+        }
 
-.category:hover {
-    background: #d8ead2;
-    transform: translateY(-8px);
-}
+        .book {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 10px #ccc;
+            transition: 0.3s;
+        }
 
-/* Book Grid */
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
+        .book:hover {
+            transform: scale(1.04);
+        }
 
-.book-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px #ccc;
-    transition: 0.3s;
-}
+        .book img {
+            width: 130px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
 
-.book-card:hover {
-    transform: translateY(-10px);
-}
+        .book h3 {
+            color: #173d32;
+            margin-bottom: 8px;
+        }
 
-.book-card img {
-    width: 140px;
-    height: 190px;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
+        .book p {
+            margin: 7px;
+            font-size: 14px;
+        }
 
-.book-card h3 {
-    color: #285943;
-    margin-bottom: 10px;
-}
+        /* Availability Labels */
+        .available {
+            display: inline-block;
+            background: #d4edda;
+            color: #155724;
+            padding: 7px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
 
-.book-card p {
-    margin: 8px;
-    font-size: 14px;
-}
+        .unavailable {
+            display: inline-block;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 7px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
 
-/* Availability */
-.available {
-    display: inline-block;
-    background: #c8e6c9;
-    color: green;
-    padding: 7px 12px;
-    border-radius: 20px;
-}
+        /* Catalog Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+        }
 
-.unavailable {
-    display: inline-block;
-    background: #ffcdd2;
-    color: red;
-    padding: 7px 12px;
-    border-radius: 20px;
-}
+        th, td {
+            border: 1px solid #ccc;
+            padding: 13px;
+            text-align: center;
+        }
 
-/* Catalog Table */
-.catalog {
-    overflow-x: auto;
-}
+        th {
+            background: #245b49;
+            color: white;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-}
+        tr:nth-child(even) {
+            background: #eaf1ed;
+        }
 
-th, td {
-    padding: 15px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
+        tr:hover {
+            background: #d6eadf;
+        }
 
-th {
-    background: #285943;
-    color: white;
-}
+        /* Library Rules */
+        .rules {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
 
-tr:nth-child(even) {
-    background: #e8f0e9;
-}
+        .rules ul {
+            padding-left: 25px;
+            line-height: 2;
+        }
 
-tr:hover {
-    background: #d8ead2;
-}
+        /* Footer */
+        footer {
+            background: #173d32;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
 
-/* Library Rules */
-.rules-box {
-    background: white;
-    max-width: 650px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px #ccc;
-    text-align: left;
-}
+        /* Responsive Design */
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
 
-.rules-box li {
-    margin: 15px;
-    line-height: 1.5;
-}
+            nav a {
+                display: inline-block;
+                margin: 7px;
+                font-size: 14px;
+            }
 
-/* Footer */
-footer {
-    background: #183a37;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+            section {
+                padding: 30px 5%;
+            }
 
-/* Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            .search-box input,
+            .search-box select {
+                width: 90%;
+            }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-    .book-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+            table {
+                font-size: 12px;
+            }
 
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+            th, td {
+                padding: 8px;
+            }
+        }
 
-@media (max-width: 600px) {
-    .book-grid, .category-grid {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    .hero h2 {
-        font-size: 27px;
-    }
-
-    section {
-        padding: 35px 5%;
-    }
-
-    .search input, .search select {
-        width: 100%;
-    }
-
-    table {
-        min-width: 600px;
-    }
-}
-
-</style>
-</head>

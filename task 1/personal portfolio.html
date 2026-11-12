@@ -2,216 +2,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6ff;
-            color: #333;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #333;
+}
 
-        /* Navigation */
-        header {
-            background: #25245c;
-            padding: 18px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* Navigation */
+header {
+    background: #172554;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: auto;
-        }
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
 
-        nav h2 {
-            color: white;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+nav a:hover {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+/* Home */
+.home {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+    color: white;
+    padding: 30px;
+}
 
-        nav a:hover {
-            color: #ffcc70;
-        }
+.home h1 {
+    font-size: 45px;
+    animation: slideDown 1.5s;
+}
 
-        /* Hero section */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            background: linear-gradient(120deg, #667eea, #764ba2);
-            padding: 30px;
-            animation: fadeIn 1.5s;
-        }
+.home p {
+    font-size: 20px;
+    margin: 15px;
+}
 
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+.home button {
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: #172554;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
 
-        .hero p {
-            font-size: 20px;
-        }
+.home button:hover {
+    background: white;
+    transform: scale(1.1);
+}
 
-        .hero button {
-            margin-top: 25px;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            background: #ffcc70;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+/* Sections */
+section {
+    padding: 65px 10%;
+}
 
-        .hero button:hover {
-            transform: scale(1.1);
-            background: white;
-        }
+h2 {
+    text-align: center;
+    color: #172554;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
 
-        /* Common sections */
-        section {
-            padding: 60px 10%;
-            text-align: center;
-        }
+.card {
+    background: white;
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #00000015;
+    transition: 0.4s;
+    animation: fadeIn 1s;
+}
 
-        section h2 {
-            color: #25245c;
-            margin-bottom: 25px;
-            font-size: 30px;
-        }
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px #00000025;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin: 15px auto;
-            max-width: 750px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
+.skill {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 15px 25px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
 
-        /* Skills */
-        .skills {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.skill:hover {
+    background: #1e40af;
+    color: white;
+    transform: scale(1.1);
+}
 
-        .skill {
-            background: #667eea;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
+/* Resume */
+.resume {
+    text-align: center;
+}
 
-        .skill:hover {
-            background: #25245c;
-            transform: scale(1.1);
-        }
+.resume a {
+    display: inline-block;
+    background: #172554;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
 
-        /* Contact form */
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 15px;
-        }
+.resume a:hover {
+    background: #7c3aed;
+}
 
-        .contact-form {
-            max-width: 550px;
-            margin: auto;
-        }
+/* Contact */
+.contact {
+    text-align: center;
+}
 
-        .contact-form button {
-            background: #25245c;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+.contact p {
+    margin: 12px;
+    font-size: 17px;
+}
 
-        .contact-form button:hover {
-            background: #667eea;
-        }
+footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        /* Footer */
-        footer {
-            background: #25245c;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-        /* Responsive design */
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 
-            .hero h1 {
-                font-size: 30px;
-            }
+    nav a {
+        margin: 0;
+        font-size: 14px;
+    }
 
-            section {
-                padding: 40px 5%;
-            }
-        }
-    </style>
-</head>
+    .home h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+}
+

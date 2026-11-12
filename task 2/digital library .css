@@ -1,216 +1,269 @@
+</style>
+</head>
+
 <body>
 
-<!-- Header -->
-<header>
-    <h1>📚 My Digital Library</h1>
-    <p>Explore Books, Discover Knowledge</p>
-</header>
+    <!-- Header -->
+    <header>
+        <h1>📚 My Digital Library</h1>
+        <p>Explore Knowledge | Read Books | Improve Your Future</p>
+    </header>
 
-<!-- Navigation -->
-<nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#books">Books</a>
-    <a href="#rules">Rules</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#books">Books</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#rules">Library Rules</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<!-- Home -->
-<section id="home" class="hero">
-    <h2>Welcome to Our Library</h2>
-    <p>Read More, Learn More and Grow More!</p>
-    <a href="#books" class="btn">Explore Books</a>
-</section>
+    <!-- Home -->
+    <section id="home">
+        <h2>Welcome to Our Library</h2>
+        <p style="text-align:center; line-height:1.8;">
+            Welcome to My Digital Library. Here you can explore
+            different book categories, find your favourite books,
+            view author information, and check book availability.
+            Reading is the key to knowledge and success!
+        </p>
+    </section>
 
-<!-- Search -->
-<section class="search">
-    <h2>Search Books</h2>
+    <!-- Search -->
+    <section>
+        <h2>Search Your Favourite Book</h2>
 
-    <input type="text" id="searchInput"
-    placeholder="Enter book name or author">
+        <div class="search-box">
+            <input type="text" id="search"
+                placeholder="Enter book or author name">
 
-    <select id="categoryFilter">
-        <option value="all">All Categories</option>
-        <option value="Science">Science</option>
-        <option value="Technology">Technology</option>
-        <option value="Fiction">Fiction</option>
-        <option value="Literature">Literature</option>
-    </select>
+            <select id="filter">
+                <option value="all">All Categories</option>
+                <option value="fiction">Fiction</option>
+                <option value="science">Science</option>
+                <option value="technology">Technology</option>
+                <option value="history">History</option>
+            </select>
 
-    <button onclick="searchBooks()">Search</button>
-</section>
+            <button onclick="searchBooks()">Search</button>
+            <button onclick="resetBooks()">Reset</button>
+        </div>
+    </section>
 
-<!-- Categories -->
-<section id="categories">
-    <h2>Book Categories</h2>
+    <!-- Categories -->
+    <section id="categories">
+        <h2>Book Categories</h2>
 
-    <div class="category-grid">
-        <div class="category">📘 Science</div>
-        <div class="category">💻 Technology</div>
-        <div class="category">📖 Fiction</div>
-        <div class="category">🌍 History</div>
-        <div class="category">🧮 Mathematics</div>
-        <div class="category">📚 Literature</div>
-    </div>
-</section>
+        <div class="category-grid">
+            <div class="category">
+                <h3>📖 Fiction</h3>
+                <p>Stories and Novels</p>
+            </div>
 
-<!-- Books -->
-<section id="books">
-    <h2>Popular Books</h2>
+            <div class="category">
+                <h3>🔬 Science</h3>
+                <p>Scientific Knowledge</p>
+            </div>
 
-    <div class="book-grid" id="bookGrid">
+            <div class="category">
+                <h3>💻 Technology</h3>
+                <p>Computer and Programming</p>
+            </div>
 
-        <div class="book-card" data-category="Fiction">
-            <img src="https://covers.openlibrary.org/b/title/harry-potter-and-the-philosophers-stone-M.jpg"
-            alt="Harry Potter cover">
-            <h3>Harry Potter</h3>
-            <p>Author: J.K. Rowling</p>
-            <p>Category: Fiction</p>
-            <span class="available">Available</span>
+            <div class="category">
+                <h3>🏛 History</h3>
+                <p>Historical Information</p>
+            </div>
+
+            <div class="category">
+                <h3>🌍 Biography</h3>
+                <p>Life Stories of Great People</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books -->
+    <section id="books">
+        <h2>Available Books</h2>
+
+        <div class="book-grid" id="bookList">
+
+            <div class="book" data-category="fiction">
+                <img src="https://covers.openlibrary.org/b/id/10523338-L.jpg"
+                     alt="Pride and Prejudice book cover">
+                <h3>Pride and Prejudice</h3>
+                <p>Author: Jane Austen</p>
+                <p>Category: Fiction</p>
+                <span class="available">Available</span>
+            </div>
+
+            <div class="book" data-category="science">
+                <img src="https://covers.openlibrary.org/b/id/10521270-L.jpg"
+                     alt="A Brief History of Time book cover">
+                <h3>A Brief History of Time</h3>
+                <p>Author: Stephen Hawking</p>
+                <p>Category: Science</p>
+                <span class="available">Available</span>
+            </div>
+
+            <div class="book" data-category="technology">
+                <img src="https://covers.openlibrary.org/b/id/12547191-L.jpg"
+                     alt="Clean Code book cover">
+                <h3>Clean Code</h3>
+                <p>Author: Robert C. Martin</p>
+                <p>Category: Technology</p>
+                <span class="unavailable">Not Available</span>
+            </div>
+
+            <div class="book" data-category="history">
+                <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg"
+                     alt="The Story of Civilization book cover">
+                <h3>The Story of Civilization</h3>
+                <p>Author: Will Durant</p>
+                <p>Category: History</p>
+                <span class="available">Available</span>
+            </div>
+
+            <div class="book" data-category="fiction">
+                <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg"
+                     alt="Novel book cover">
+                <h3>Classic Literature</h3>
+                <p>Author: Various Authors</p>
+                <p>Category: Fiction</p>
+                <span class="unavailable">Not Available</span>
+            </div>
+
         </div>
 
-        <div class="book-card" data-category="Literature">
-            <img src="https://covers.openlibrary.org/b/title/the-alchemist-M.jpg"
-            alt="The Alchemist cover">
-            <h3>The Alchemist</h3>
-            <p>Author: Paulo Coelho</p>
-            <p>Category: Literature</p>
-            <span class="available">Available</span>
+        <p id="noResults" style="display:none; text-align:center; margin-top:20px;">
+            No books found!
+        </p>
+    </section>
+
+    <!-- Catalog Table -->
+    <section id="catalog">
+        <h2>Book Catalog Information</h2>
+
+        <table>
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Availability</th>
+            </tr>
+
+            <tr>
+                <td>101</td>
+                <td>Pride and Prejudice</td>
+                <td>Jane Austen</td>
+                <td>Fiction</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>A Brief History of Time</td>
+                <td>Stephen Hawking</td>
+                <td>Science</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>103</td>
+                <td>Clean Code</td>
+                <td>Robert C. Martin</td>
+                <td>Technology</td>
+                <td>Not Available</td>
+            </tr>
+
+            <tr>
+                <td>104</td>
+                <td>The Story of Civilization</td>
+                <td>Will Durant</td>
+                <td>History</td>
+                <td>Available</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Library Rules -->
+    <section id="rules">
+        <h2>Library Rules and Regulations</h2>
+
+        <div class="rules">
+            <ul>
+                <li>Maintain silence inside the library.</li>
+                <li>Carry your library ID card.</li>
+                <li>Return books before the due date.</li>
+                <li>Do not damage or write on library books.</li>
+                <li>Keep the library clean and tidy.</li>
+                <li>Handle books carefully.</li>
+                <li>Follow the librarian's instructions.</li>
+            </ul>
         </div>
+    </section>
 
-        <div class="book-card" data-category="Science">
-            <img src="https://covers.openlibrary.org/b/title/a-brief-history-of-time-M.jpg"
-            alt="A Brief History of Time cover">
-            <h3>A Brief History of Time</h3>
-            <p>Author: Stephen Hawking</p>
-            <p>Category: Science</p>
-            <span class="unavailable">Not Available</span>
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+        <div style="text-align:center; line-height:2;">
+            <p>Email: library@gmail.com</p>
+            <p>Phone: +91 9876543210</p>
+            <p>Address: Vijayawada, Andhra Pradesh</p>
         </div>
+    </section>
 
-        <div class="book-card" data-category="Technology">
-            <img src="https://covers.openlibrary.org/b/title/the-art-of-computer-programming-M.jpg"
-            alt="Computer Programming cover">
-            <h3>Computer Programming</h3>
-            <p>Author: Donald Knuth</p>
-            <p>Category: Technology</p>
-            <span class="available">Available</span>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 My Digital Library</p>
+        <p>Designed using HTML, Internal CSS and JavaScript</p>
+    </footer>
 
-    </div>
-    <p id="noResults" style="display:none; margin-top:20px;">
-        No books found.
-    </p>
-</section>
+    <!-- Search and Filter JavaScript -->
+    <script>
+        function searchBooks() {
+            let input = document.getElementById("search")
+                .value.toLowerCase();
 
-<!-- Book Catalog -->
-<section class="catalog">
-    <h2>Book Catalog Information</h2>
+            let category = document.getElementById("filter").value;
 
-    <table>
-        <tr>
-            <th>Book ID</th>
-            <th>Book Name</th>
-            <th>Author</th>
-            <th>Category</th>
-            <th>Availability</th>
-        </tr>
+            let books = document.querySelectorAll(".book");
 
-        <tr>
-            <td>101</td>
-            <td>Harry Potter</td>
-            <td>J.K. Rowling</td>
-            <td>Fiction</td>
-            <td>Available</td>
-        </tr>
+            let found = 0;
 
-        <tr>
-            <td>102</td>
-            <td>The Alchemist</td>
-            <td>Paulo Coelho</td>
-            <td>Literature</td>
-            <td>Available</td>
-        </tr>
+            books.forEach(function(book) {
+                let text = book.innerText.toLowerCase();
+                let bookCategory = book.dataset.category;
 
-        <tr>
-            <td>103</td>
-            <td>A Brief History of Time</td>
-            <td>Stephen Hawking</td>
-            <td>Science</td>
-            <td>Not Available</td>
-        </tr>
+                if (
+                    text.includes(input) &&
+                    (category === "all" || category === bookCategory)
+                ) {
+                    book.style.display = "block";
+                    found++;
+                } else {
+                    book.style.display = "none";
+                }
+            });
 
-        <tr>
-            <td>104</td>
-            <td>Computer Programming</td>
-            <td>Donald Knuth</td>
-            <td>Technology</td>
-            <td>Available</td>
-        </tr>
-    </table>
-</section>
-
-<!-- Library Rules -->
-<section id="rules">
-    <h2>Library Rules</h2>
-
-    <div class="rules-box">
-        <ol>
-            <li>Maintain silence inside the library.</li>
-            <li>Handle books carefully.</li>
-            <li>Return books before the due date.</li>
-            <li>Do not damage or write on books.</li>
-            <li>Keep the library clean.</li>
-            <li>Carry your library identity card.</li>
-        </ol>
-    </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-    <h2>Contact Us</h2>
-
-    <p>Email: library@gmail.com</p>
-    <p>Phone: +91 9876543210</p>
-    <p>Address: Vijayawada, Andhra Pradesh</p>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>© 2026 My Digital Library | All Rights Reserved</p>
-</footer>
-
-<script>
-function searchBooks() {
-
-    let input = document.getElementById("searchInput")
-        .value.toLowerCase();
-
-    let category = document.getElementById("categoryFilter")
-        .value;
-
-    let books = document.querySelectorAll(".book-card");
-    let count = 0;
-
-    books.forEach(function(book) {
-
-        let text = book.innerText.toLowerCase();
-        let bookCategory = book.dataset.category;
-
-        if (
-            text.includes(input) &&
-            (category === "all" || category === bookCategory)
-        ) {
-            book.style.display = "block";
-            count++;
-        } else {
-            book.style.display = "none";
+            document.getElementById("noResults").style.display =
+                found === 0 ? "block" : "none";
         }
-    });
 
-    document.getElementById("noResults").style.display =
-        count === 0 ? "block" : "none";
-}
-</script>
+        function resetBooks() {
+            document.getElementById("search").value = "";
+            document.getElementById("filter").value = "all";
+
+            document.querySelectorAll(".book").forEach(function(book) {
+                book.style.display = "block";
+            });
+
+            document.getElementById("noResults").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
